@@ -16,6 +16,7 @@ export default class HashTable {
     this.table[index] = value;
   }
 
+  // Using a basic hash example
   // https://www.freecodecamp.org/news/javascript-hash-table-associative-array-hashing-in-js/
   _hash(key) {
     let hash = 0;
