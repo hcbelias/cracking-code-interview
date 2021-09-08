@@ -10,6 +10,7 @@
     "prettier:check": "npx prettier --check ./src",
     "prettier:write": "npx prettier --write ./src",
     "test": "jest",
+    "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
