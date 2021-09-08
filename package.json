@@ -23,7 +23,6 @@
   "homepage": "https://github.com/hcbelias/cracking-code-interview#readme",
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
     "jest": "^27.1.0",
     "prettier": "2.3.2",
