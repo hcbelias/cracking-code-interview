@@ -1,7 +1,7 @@
 {
   "name": "cracking-code-interview",
   "version": "1.0.0",
-  "description": "",
+  "description": "Exercises for code interview",
   "directories": {
     "doc": "docs"
   },
