@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/hcbelias/cracking-code-interview#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "jest": "^27.1.0",
