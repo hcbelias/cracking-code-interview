@@ -28,7 +28,7 @@ describe('data-structures/hash-table', function () {
     });
   });
   describe('get method', function () {
-    it('should reutrn null when hash does not exists', () => {
+    it('should return null when hash does not exists', () => {
       debugger;
     });
 
