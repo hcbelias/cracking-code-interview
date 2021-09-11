@@ -9,14 +9,42 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-debugger": "warn",
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "require-jsdoc": [
+      "warn",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": true,
+          "ClassDeclaration": true,
+          "FunctionExpression": true
+        }
+      }
+    ],
+    "padding-line-between-statements": [
+      "warn",
+      {
+        "blankLine": "always",
+        "prev": ["const", "let", "var"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
+      }
+    ]
   },
   "globals": {
     "test": true,
     "expect": true,
-	"it": true,
-	"describe": true
+    "it": true,
+    "describe": true,
+    "afterEach": true,
+    "beforeEach": true,
+    "jest": true
   }
 }
