@@ -16,18 +16,41 @@ describe('data-structures/hash-table', function () {
       hashTableTest.set(item[0], item[1]);
     });
   });
-
+/*
+  // Could be used to display data - debugging
+  afterEach(() => {
+    hashTableTest.display();
+  });
+*/
+  describe('constructor', function () {
+    it('should build hashtable with 1024 positions when passing 1024 as param', () => {
+      const valueTest = 1024;
+      const hashTable = new HashTable(valueTest);
+      
+      expect(hashTable.table.length).toBe(valueTest);
+    });
+  });
   describe('set method', function () {
-    it('should set 12021 when hash does not exists', () => {
-      
+    it('should set as { value: 123 } when hash does not exists', () => {
+      const valueTest = { value: 123 };
+      const keyTest = 'insert-test';
+
+      hashTableTest.set('insert-test', valueTest);
+      const value = hashTableTest.get(keyTest);
+
+      expect(value).toBe(valueTest);
     });
 
-    it('should set "asdsd" when hash exists without hash collision', () => {
-      
-    });
+    it('should set as "ASDASDSDA" when hash already exists', () => {
+      const valueTest = 'ASDASDSDA';
+      const keyTest = 'Spain';
+      const currentValue = hashTableTest.get(keyTest);
 
-    it('should set "sadsda" when hash exists with hash collision', () => {
+      expect(currentValue).toBe(110);
+      hashTableTest.set(keyTest, valueTest);
+      const newValue = hashTableTest.get(keyTest);
 
+      expect(newValue).toBe(valueTest);
     });
   });
 
@@ -36,6 +59,12 @@ describe('data-structures/hash-table', function () {
       const value = hashTableTest.get('mypersonalTest');
 
       expect(value).toBeNull();
+    });
+
+    it('should get value when collision does not happen to get a key', () => {
+      const value = hashTableTest.get('key');
+
+      expect(value).toBe(123);
     });
 
     it('should get value with key collision when collision happens to get a key', () => {
@@ -60,18 +89,17 @@ describe('data-structures/hash-table', function () {
       expect(result).toBeFalsy();
     });
 
-    it('should return false when hash does exists but there are not records', () => {
-      
+    it('should return true when hash does exists and there are records', () => {      
       const result = hashTableTest.remove('Spain');
 
       expect(result).toBeTruthy();
-
     });
 
-
-    it('should get value with key collision when collision happens to replace a key', () => {
-
-
+    it('should return false when hash does exists but there are not records', () => {      
+      hashTableTest.table[251] = [['other-key', 21321]];
+      const result = hashTableTest.remove('Spain');
+      
+      expect(result).toBeFalsy();
     });
   });
 
@@ -80,7 +108,6 @@ describe('data-structures/hash-table', function () {
       const spy = jest.spyOn(global.console, 'table');
 
       hashTableTest.display();
-
       expect(spy).toHaveBeenCalledTimes(1);
     });
 
@@ -88,7 +115,6 @@ describe('data-structures/hash-table', function () {
       const spy = jest.spyOn(global.console, 'table');
 
       hashTableTest.display();
-
       expect(spy).toHaveBeenCalledWith(hashTableTest.table);
     });
   });

@@ -49,7 +49,8 @@ export default class HashTable {
    */
   set(key, value) {
     const index = this._hash(key);
-    // key colission - mapping same index O(n)
+
+    // key colission - O(n)
     if (this.table[index]) {
       for (let i = 0; i < this.table[index].length; i++) {
         if (this.table[index][i][0] === key) {
@@ -61,15 +62,7 @@ export default class HashTable {
     } else {
       this.table[index] = [];
     }
-
-    var te = 12;
-
-    te += 1121;
-
-    12 + te;
-
     this.table[index].push([key, value]);
-
     this.size++;
   }
 
@@ -106,7 +99,13 @@ export default class HashTable {
 
     if (this.table[index] && this.table[index].length) {
       for (let i = 0; i < this.table.length; i++) {
-        if (this.table[index][i][0] === key) {
+        const iterator = this.table[index][i];
+
+        if (!iterator) {
+          return false;
+        }
+
+        if (iterator[0] === key) {
           this.table[index].splice(i, 1);
           this.size--;
 

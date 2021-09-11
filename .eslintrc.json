@@ -43,6 +43,7 @@
     "expect": true,
     "it": true,
     "describe": true,
+    "afterEach": true,
     "beforeEach": true,
     "jest": true
   }
