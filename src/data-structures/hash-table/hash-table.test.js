@@ -2,44 +2,62 @@ import HashTable from './hash-table';
 
 let hashTableTest;
 
-beforeEach(() => {
-  hashTableTest = new HashTable();
-  hashTableTest.set('key', 123);
-  hashTableTest.set('key2', 234);
-  hashTableTest.set('Spain', 110);
-  hashTableTest.set('ǻ', 192);
-});
-
+const mockData = [
+  ['key', 123],
+  ['key2', 234],
+  ['Spain', 110],
+  ['ǻ', 192],
+];
 
 describe('data-structures/hash-table', function () {
+  beforeEach(() => {
+    hashTableTest = new HashTable();
+    mockData.forEach((item) => {
+      hashTableTest.set(item[0], item[1]);
+    });
+  });
+
   describe('set method', function () {
     it('should set 12021 when hash does not exists', () => {
-      debugger;
       
     });
     it('should set "asdsd" when hash exists without hash collision', () => {
-      debugger;
       
     });
 
     it('should set "sadsda" when hash exists with hash collision', () => {
-      debugger;
-      
+
     });
   });
   describe('get method', function () {
     it('should return null when hash does not exists', () => {
-      debugger;
+
     });
 
     it('should get value with key collision when collision happens to replace a key', () => {
-      debugger;
+
     });
   });
-  describe('_hash method', function () {
-    it('adds 1 + 2 to equal 3', () => {
-      debugger;
-      // expect(HashTable(1, 2)).toBe(7);
+  describe('remove method', function () {
+    it('should return null when hash does not exists', () => {
+
+    });
+
+    it('should get value with key collision when collision happens to replace a key', () => {
+
+    });
+  });
+  describe('display method', function () {
+    it('should invoke console.table a single time when display method is triggered', () => {
+      const spy = jest.spyOn(global.console, 'table');
+      hashTableTest.display();
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it('should invoke console.table passing internal table as parameter when display method is triggered', () => {
+      const spy = jest.spyOn(global.console, 'table');
+      hashTableTest.display();
+      expect(spy).toHaveBeenCalledWith(hashTableTest.table);
     });
   });
 });

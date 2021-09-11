@@ -30,6 +30,7 @@
     "expect": true,
     "it": true,
     "describe": true,
-    "beforeEach": true
+    "beforeEach": true,
+    "jest": true
   }
 }
