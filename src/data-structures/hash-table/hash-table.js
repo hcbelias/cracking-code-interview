@@ -76,8 +76,13 @@ export default class HashTable {
 
     if (this.table[index]) {
       for (let i = 0; i < this.table.length; i++) {
-        if (this.table[index][i][0] === key) {
-          return this.table[index][i][1];
+        const iterator = this.table[index][i];
+
+        if (!iterator) {
+          return null;
+        }
+        if (iterator[0] === key) {
+          return iterator[1];
         }
       }
     }

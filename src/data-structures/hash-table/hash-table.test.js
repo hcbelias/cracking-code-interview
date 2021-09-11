@@ -74,6 +74,13 @@ describe('data-structures/hash-table', function () {
       expect(valueOne).toBe(110);
       expect(valueTwo).toBe(192);
     });
+
+    it('should get null when hash does exists but there are inconsistent records', () => {      
+      hashTableTest.table[251] = [['other-key', 21321]];
+      const result = hashTableTest.get('Spain');
+      
+      expect(result).toBeNull();
+    });
   });
 
   describe('remove method', function () {
@@ -95,7 +102,7 @@ describe('data-structures/hash-table', function () {
       expect(result).toBeTruthy();
     });
 
-    it('should return false when hash does exists but there are not records', () => {      
+    it('should return false when hash does exists but there are inconsistent records', () => {      
       hashTableTest.table[251] = [['other-key', 21321]];
       const result = hashTableTest.remove('Spain');
       
