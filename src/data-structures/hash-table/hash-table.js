@@ -21,6 +21,7 @@ export default class HashTable {
    */
   constructor(bucketTableSize = 256) {
     this.table = new Array(bucketTableSize);
+
     this.size = 0;
   }
 
@@ -31,9 +32,11 @@ export default class HashTable {
    */
   _hash(key) {
     let hash = 0;
+
     for (let i = 0; i < key.length; i++) {
       hash += key.charCodeAt(i);
     }
+
     // Mod operation enforce index to array's bounds
     return hash % this.table.length;
   }
@@ -51,14 +54,22 @@ export default class HashTable {
       for (let i = 0; i < this.table[index].length; i++) {
         if (this.table[index][i][0] === key) {
           this.table[index][i][1] = value;
+
           return;
         }
       }
-      this.table[index].push([key, value]);
     } else {
       this.table[index] = [];
-      this.table[index].push([key, value]);
     }
+
+    var te = 12;
+
+    te += 1121;
+
+    12 + te;
+
+    this.table[index].push([key, value]);
+
     this.size++;
   }
 
@@ -69,6 +80,7 @@ export default class HashTable {
    */
   get(key) {
     const index = this._hash(key);
+
     if (this.table[index]) {
       for (let i = 0; i < this.table.length; i++) {
         if (this.table[index][i][0] === key) {
@@ -76,6 +88,7 @@ export default class HashTable {
         }
       }
     }
+
     return null;
   }
 
@@ -85,6 +98,10 @@ export default class HashTable {
    * @returns True if found register, false if not
    */
   remove(key) {
+    if (!key) {
+      return false;
+    }
+
     const index = this._hash(key);
 
     if (this.table[index] && this.table[index].length) {
@@ -92,12 +109,13 @@ export default class HashTable {
         if (this.table[index][i][0] === key) {
           this.table[index].splice(i, 1);
           this.size--;
+
           return true;
         }
       }
-    } else {
-      return false;
     }
+
+    return false;
   }
 
   /**

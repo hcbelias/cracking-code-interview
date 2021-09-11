@@ -7,6 +7,7 @@
   },
   "scripts": {
     "lint": "npx eslint ./src",
+    "lint:fix": "npx eslint ./src",
     "prettier:check": "npx prettier --check ./src",
     "prettier:write": "npx prettier --write ./src",
     "test": "jest",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.4",
+    "@types/jest": "^27.0.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "jest": "^27.1.0",
