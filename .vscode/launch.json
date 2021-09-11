@@ -12,7 +12,8 @@
         "./jest.config.json",
         "--verbose",
         "-i",
-        "--no-cache"
+        "--no-cache",
+        "--coverage"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
@@ -28,7 +29,8 @@
         "--verbose",
         "-i",
         "--no-cache",
-        "--watchAll"
+        "--watchAll",
+        "--coverage"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
@@ -45,7 +47,8 @@
         "--verbose",
         "-i",
         "--no-cache",
-        "--watchAll"
+        "--watchAll",
+        "--coverage"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"

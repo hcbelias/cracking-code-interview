@@ -1,4 +1,4 @@
-// References:
+// References
 // Nathan Sebhastian - https://www.freecodecamp.org/news/javascript-hash-table-associative-array-hashing-in-js/
 // Notes:
 // Page 88
@@ -17,7 +17,8 @@
  */
 export default class HashTable {
   /**
-   * Has bucket's array and size props as defaults
+   * Buffer's array and size props are defined
+   * @param {number} bucketTableSize Buffer's size
    */
   constructor(bucketTableSize = 256) {
     this.table = new Array(bucketTableSize);
@@ -44,7 +45,7 @@ export default class HashTable {
   /**
    * Set value
    * @param {string} key Key used in hash function
-   * @param {any} value Value to be set
+   * @param {*} value Value to be set
    * @returns
    */
   set(key, value) {
