@@ -19,8 +19,8 @@ export default class HashTable {
   /**
    * Has bucket's array and size props as defaults
    */
-  constructor() {
-    this.table = new Array(256);
+  constructor(bucketTableSize = 256) {
+    this.table = new Array(bucketTableSize);
     this.size = 0;
   }
 
@@ -46,6 +46,7 @@ export default class HashTable {
    */
   set(key, value) {
     const index = this._hash(key);
+    // key colission - mapping same index O(n)
     if (this.table[index]) {
       for (let i = 0; i < this.table[index].length; i++) {
         if (this.table[index][i][0] === key) {
@@ -75,7 +76,7 @@ export default class HashTable {
         }
       }
     }
-    return undefined;
+    return null;
   }
 
   /**

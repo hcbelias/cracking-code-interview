@@ -12,13 +12,14 @@
     "test": "jest",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch"
-  },
+  },  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hcbelias/cracking-code-interview.git"
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/hcbelias/cracking-code-interview/issues"
   },

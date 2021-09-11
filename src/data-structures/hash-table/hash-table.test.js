@@ -1,24 +1,39 @@
 import HashTable from './hash-table';
 
+let hashTableTest;
+
+beforeEach(() => {
+  hashTableTest = new HashTable();
+  hashTableTest.set('key', 123);
+  hashTableTest.set('key2', 234);
+  hashTableTest.set('Spain', 110);
+  hashTableTest.set('ǻ', 192);
+});
+
+
 describe('data-structures/hash-table', function () {
   describe('set method', function () {
-    it('adds 1 + 2 to equal 3', () => {
+    it('should set 12021 when hash does not exists', () => {
       debugger;
-      const table = new HashTable();
-      table.set('key', 123);
-      table.set('key2', 234);
-      table.set('Spain', 110);
-      table.set('ǻ', 192);
-      table.display();
-debugger
-      console.log(table.get('key2'));
-      // expect(HashTable(1, 2)).toBe(7);
+      
+    });
+    it('should set "asdsd" when hash exists without hash collision', () => {
+      debugger;
+      
+    });
+
+    it('should set "sadsda" when hash exists with hash collision', () => {
+      debugger;
+      
     });
   });
   describe('get method', function () {
-    it('adds 1 + 2 to equal 3', () => {
+    it('should reutrn null when hash does not exists', () => {
       debugger;
-      // expect(HashTable(1, 2)).toBe(7);
+    });
+
+    it('should get value with key collision when collision happens to replace a key', () => {
+      debugger;
     });
   });
   describe('_hash method', function () {

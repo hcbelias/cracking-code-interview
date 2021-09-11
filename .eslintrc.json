@@ -29,6 +29,7 @@
     "test": true,
     "expect": true,
     "it": true,
-    "describe": true
+    "describe": true,
+    "beforeEach": true
   }
 }
